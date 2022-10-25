@@ -1,6 +1,6 @@
 import java.util.Thread;
 
-public class ThreadProgram extends Thread {
+public class ThreadProgram implements Runnable {
     
     public void run() {
         System.out.println("Thread is running.");
@@ -8,6 +8,7 @@ public class ThreadProgram extends Thread {
     
     public static void main(String[] args) {
         ThreadProgram threadObj = new ThreadProgram();
-        threadObj.start();
+        Thread newThread = new Thread(threadObj);
+        newThread.start();
     }
 }
